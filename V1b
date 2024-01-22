@@ -1,0 +1,21 @@
+local player = game.Players.LocalPlayer
+
+local allowedNames = {
+    "confused_paid",
+    "SkinnyContadTPS",
+    "gay",
+} -- Adicione os nomes permitidos aqui
+local isWhitelisted = false
+
+for _, allowedName in pairs(allowedNames) do
+    if player.Name == allowedName then
+        isWhitelisted = true
+        break -- Se encontrou um nome permitido, sai do loop
+    end
+end
+
+if isWhitelisted then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Skinny3z/BloxScript/main/SkinnyHubV1.txt"))();
+else
+    player:Kick("Not Whitelisted")
+end
